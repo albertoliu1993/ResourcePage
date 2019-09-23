@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<p-toolbar>
+    <div class="ui-toolbar-group-left">
+        <div class="ui-g-12 ui-md-4">
+            <div class="ui-inputgroup">
+                <input type="text" pInputText placeholder="Keyword" [(ngModel)]="filterwords">
+                <button pButton type="button" icon="pi pi-search" class="ui-button-one" (click)="filterByKeyWord()"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui-toolbar-group-right">
+        <p-tieredMenu #menu [model]="items" [popup]="true"></p-tieredMenu>
+        <button #btn type="button" pButton icon="pi pi-plus" (click)="menu.toggle($event)" class="ui-button-two"></button>
+    </div>
+</p-toolbar>
+
+
+<p-table [columns]="cols" [value]="filteredResourceList" selectionMode="single" [(selection)]="selectedResource">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns">{{col.header}}</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr [pSelectableRow]="rowData">
+            <td *ngFor="let col of columns">{{rowData[col.field]}}</td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<p-dialog header="Resource Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" [style]="{width: '300px'}">
+    <div class="ui-g ui-fluid" *ngIf="resourcelist">
+        <div class="ui-g-12">
+            <div class="ui-g-4">
+                <label for="name">Resource Name</label>
+            </div>
+            <div class="ui-g-8">
+                <input pInputText id="name" [(ngModel)]="resourcelist.name" />
+            </div>
+        </div>
+        <div class="ui-g-12">
+            <div class="ui-g-4">
+                <label for="cost_code">Resource Code</label>
+            </div>
+            <div class="ui-g-8">
+                <input pInputText id="cost_code" [(ngModel)]="resourcelist.cost_code" />
+            </div>
+        </div>
+    </div>
+    <p-footer>
+        <div class="ui-dialog-buttonpane ui-helper-clearfix">
+            <button type="button" pButton icon="fa fa-close" (click)="delete()" label="Delete"></button>
+            <button type="button" pButton icon="fa fa-check" (click)="save()" label="Save"></button>
+        </div>
+    </p-footer>
+</p-dialog>
+
+<p-dialog header="Resource Details" [(visible)]="displayDialog2" [responsive]="true" showEffect="fade" [modal]="true" [style]="{width: '300px'}">
+    <input type="file" class="upload" (change)="changeListener($event.target.files)" accept=".csv" />
+    <button type="button" pButton icon="fa fa-check" (click)="submit()" label="Submit"></button>
+</p-dialog>

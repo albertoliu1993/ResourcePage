@@ -1,0 +1,27 @@
+:host ::ng-deep .ui-toolbar {
+    background-color: white;
+    padding-left: 0em;
+    padding-top: 0em;
+    padding-bottom: 0em;
+    border-bottom-color: black;
+}
+
+:host ::ng-deep .ui-toolbar-group-left {
+    background-color: rgb(255, 81, 0);
+    align-items: center;
+}
+
+:host ::ng-deep .pi-th-large {
+    color: white;
+    font-size: 3em;
+}
+
+:host ::ng-deep .ui-button {
+    background-color: black;
+    font-size: 0.1em;
+}
+
+:host ::ng-deep .ui-sidebar-sm {
+    width: 11%;
+    background-color: black;
+}
