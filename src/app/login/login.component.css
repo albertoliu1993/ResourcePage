@@ -1,0 +1,19 @@
+#loginButton{
+   background: #fe5e00; 
+   margin-top: 5px;
+   width: 100%;
+}
+
+#signupButton{
+    background: #fe5e00;
+    margin: 5px;
+    margin-right: 40%;
+}
+
+#loginHeader{
+    color: #fe5e00;  
+}
+
+button{
+    background: #fe5e00;
+}

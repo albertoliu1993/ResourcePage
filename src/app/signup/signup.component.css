@@ -1,0 +1,23 @@
+#signupFormButton{
+    background: #fe5e00; 
+    margin-top: 5px;
+    /* width: 100%; */
+    color: white;
+}
+
+#signupHeader{
+    color:#fe5e00; 
+}
+
+.form-group{
+    margin-top: 5px;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+
+  button{
+    color:#fe5e00;
+     
+  }
