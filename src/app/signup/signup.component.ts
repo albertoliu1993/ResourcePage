@@ -117,7 +117,7 @@ export class SignupComponent implements OnInit {
     // Send Http request
     this.http
       .post(
-        'https://post-request.firebaseio.com/posts.json',
+        'http://192.168.1.247:8080/Project1/user/signup',
         postData
       )
       .subscribe(responseData => {
@@ -135,7 +135,7 @@ export class SignupComponent implements OnInit {
   }
 
   private fetchPosts(){
-    this.http.get('https://post-request.firebaseio.com/posts.json')
+    this.http.get('http://192.168.1.247:8080/Project1/user/profile')
     .subscribe(posts => {
       console.log(posts);
     });    

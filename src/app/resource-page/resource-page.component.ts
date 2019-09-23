@@ -17,7 +17,7 @@ export class ResourcePageComponent implements OnInit {
   myResourceList: ResourceList[];
   columnlist: string[] = ['name', 'cost_code'];
   errorMessage: string;
-  requestResourceAll = 'http://192.168.1.172:8080/Project1/res/displayResources';
+  requestResourceAll = 'http://192.168.1.247:8080/Project1/res/displayResources';
 
   displayTableAll() {
     this.service.getResourceList(this.requestResourceAll).subscribe(

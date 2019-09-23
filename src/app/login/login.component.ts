@@ -77,7 +77,7 @@ console.log("onSubmit executing...")
     // Send Http request
     this.http
       .post(
-        'https://post-request.firebaseio.com/posts.json',
+        'http://192.168.1.247:8080/Project1/user/verify',
         postData
       )
       .subscribe(responseData => {

@@ -6,40 +6,27 @@
         </div>
         <br>
     </div>
-    
+
     <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
-            <form  [formGroup]="signupForm" (ngSubmit)="onCreatePost(this.signupForm.value);onSubmit()">
-                
-                    <div class="form-group col-md-6 mb-3">
-                        <label>First name</label>
-                        <input 
-                        type="text" 
-                        class="form-control" 
-                        id="firstname" 
-                        placeholder="First name" 
-                        formControlName="firstName" 
-                        [ngClass]="{ 'is-invalid': submitted && formFieldsGetter.firstName.errors }"                                   
-                        >
-                        <div *ngIf="submitted && formFieldsGetter.firstName.errors" class="invalid-feedback">
-                            <div *ngIf="formFieldsGetter.firstName.errors.required">First Name is required</div>
-                        </div>
+            <form [formGroup]="signupForm" (ngSubmit)="onCreatePost(this.signupForm.value);onSubmit()">
+
+                <div class="form-group col-md-6 mb-3">
+                    <label>First name</label>
+                    <input type="text" class="form-control" id="firstname" placeholder="First name" formControlName="firstName" [ngClass]="{ 'is-invalid': submitted && formFieldsGetter.firstName.errors }">
+                    <div *ngIf="submitted && formFieldsGetter.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="formFieldsGetter.firstName.errors.required">First Name is required</div>
                     </div>
-                    <div class="form-group col-md-6 mb-3">
-                        <label>Last name</label>
-                        <input 
-                        type="text" 
-                        class="form-control" 
-                        id="lastname" 
-                        placeholder="Last name" 
-                        [ngClass]="{ 'is-invalid': submitted && formFieldsGetter.lastName.errors }"
-                        formControlName="lastName">      
-                        <div *ngIf="submitted && formFieldsGetter.lastName.errors" class="invalid-feedback">
-                            <div *ngIf="formFieldsGetter.lastName.errors.required">Last Name is required</div>
-                        </div>
+                </div>
+                <div class="form-group col-md-6 mb-3">
+                    <label>Last name</label>
+                    <input type="text" class="form-control" id="lastname" placeholder="Last name" [ngClass]="{ 'is-invalid': submitted && formFieldsGetter.lastName.errors }" formControlName="lastName">
+                    <div *ngIf="submitted && formFieldsGetter.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="formFieldsGetter.lastName.errors.required">Last Name is required</div>
                     </div>
-                
+                </div>
+
 
 
                 <div class="form-row">
@@ -49,13 +36,7 @@
                             <div class="input-group-prepend">
 
                             </div>
-                            <input 
-                            type="text" 
-                            class="form-control" 
-                            id="username" 
-                            placeholder="Username"
-                            formControlName="username"
-                            [ngClass]="{ 'is-invalid': submitted && formFieldsGetter.username.errors }">
+                            <input type="text" class="form-control" id="username" placeholder="Username" formControlName="username" [ngClass]="{ 'is-invalid': submitted && formFieldsGetter.username.errors }">
                             <div *ngIf="submitted && formFieldsGetter.username.errors" class="invalid-feedback">
                                 <div *ngIf="formFieldsGetter.username.errors.required">Username is required</div>
                             </div>
@@ -65,21 +46,14 @@
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
                             <label for="signupEmail" [ngClass]="signupForm.controls['signupEmail'].invalid ? '' : ''">Email Address</label>
-                            <input 
-                            type="email" 
-                            class="form-control" 
-                            id="signupEmail" 
-                            placeholder="Email" 
-                            email
-                            formControlName="signupEmail"
-                            [ngClass]="signupForm.controls['signupEmail'].invalid ? 'is-invalid' : ''">
+                            <input type="email" class="form-control" id="signupEmail" placeholder="Email" email formControlName="signupEmail" [ngClass]="signupForm.controls['signupEmail'].invalid ? 'is-invalid' : ''">
                             <label class="text-danger" *ngIf="signupForm.controls['signupEmail'].hasError('required')">
                                 Email is Required!
                               </label>
-                              <label class="text-danger" *ngIf="signupForm.controls['signupEmail'].hasError('signupEmail')">
+                            <label class="text-danger" *ngIf="signupForm.controls['signupEmail'].hasError('signupEmail')">
                                 Enter a valid email address!
                               </label>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -88,26 +62,20 @@
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
                         <label>Password</label>
-                        <input 
-                        type="password" 
-                        class="form-control" 
-                        id="signupPassword" 
-                        placeholder="Password" 
-                        formControlName="signupPassword"
-                        [ngClass]="{ 'is-invalid': submitted && formFieldsGetter.signupPassword.errors }">
+                        <input type="password" class="form-control" id="signupPassword" placeholder="Password" formControlName="signupPassword" [ngClass]="{ 'is-invalid': submitted && formFieldsGetter.signupPassword.errors }">
                         <label class="col" [ngClass]="signupForm.controls['signupPassword'].hasError('required') || signupForm.controls['signupPassword'].hasError('hasNumber')  ? 'text-danger' : 'text-success'">
                             <i class="material-icons">{{ signupForm.controls['signupPassword'].hasError('required') ||
                                 signupForm.controls['signupPassword'].hasError('hasNumber') ? 'cancel' :
                               'check_circle' }}</i>
                             Must contain at least 1 number!
                           </label>
-                          <label class="col" [ngClass]="signupForm.controls['signupPassword'].hasError('required') || signupForm.controls['signupPassword'].hasError('hasCapitalCase')  ? 'text-danger' : 'text-success'">
+                        <label class="col" [ngClass]="signupForm.controls['signupPassword'].hasError('required') || signupForm.controls['signupPassword'].hasError('hasCapitalCase')  ? 'text-danger' : 'text-success'">
                             <i class="material-icons">{{ signupForm.controls['signupPassword'].hasError('required') ||
                                 signupForm.controls['signupPassword'].hasError('hasCapitalCase') ? 'cancel' :
                               'check_circle' }}</i>
                             Must contain at least 1 in Capital Case!
                           </label>
-                          <label class="col" [ngClass]="signupForm.controls['signupPassword'].hasError('required') || signupForm.controls['signupPassword'].hasError('hasSpecialCharacters') ? 'text-danger' : 'text-success'">
+                        <label class="col" [ngClass]="signupForm.controls['signupPassword'].hasError('required') || signupForm.controls['signupPassword'].hasError('hasSpecialCharacters') ? 'text-danger' : 'text-success'">
                             <i class="material-icons">{{ signupForm.controls['signupPassword'].hasError('required') ||
                                 signupForm.controls['signupPassword'].hasError('hasSpecialCharacters') ? 'cancel' :
                               'check_circle' }}</i>
@@ -115,23 +83,17 @@
                           </label>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label >Confirm Password</label>
-                        <input 
-                        type="password" 
-                        class="form-control" 
-                        id="confirmPassword" 
-                        placeholder="Confirm Password"
-                        formControlName="confirmPassword"
-                        [ngClass]="signupForm.controls['confirmPassword'].invalid ? 'is-invalid' : ''">
-                        
-            <label class="text-danger" *ngIf="signupForm.controls['confirmPassword'].hasError('required')">
+                        <label>Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" formControlName="confirmPassword" [ngClass]="signupForm.controls['confirmPassword'].invalid ? 'is-invalid' : ''">
+
+                        <label class="text-danger" *ngIf="signupForm.controls['confirmPassword'].hasError('required')">
               Password is Required!
             </label>
-            <label class="text-danger" *ngIf="signupForm.controls['confirmPassword'].hasError('NoPassswordMatch')">
+                        <label class="text-danger" *ngIf="signupForm.controls['confirmPassword'].hasError('NoPassswordMatch')">
               Password do not match
             </label>
-          </div>
-          
+                    </div>
+
                 </div>
 
 
@@ -146,13 +108,8 @@
                         </div>
                     </div>
                 </div>
-                <button 
-                id="signupFormButton"
-                class="btn btn-danger" 
-                type="submit"
-                [disabled]="signupForm.invalid"
-                (click)="router.navigate(['/login']);"
-                >Register</button>
+                <button id="signupFormButton" class="btn btn-danger" type="submit" [disabled]="signupForm.invalid" (click)="router.navigate(['/login']);">Register</button>
+                <button (click)="fetchPosts()">Fetch</button>
             </form>
         </div>
         <div class="col-sm-4"></div>

@@ -10,7 +10,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 const httpOptions={
   headers: new HttpHeaders({'content-Type' : 'application/json'}),
-  responseType: 'json' as 'json'
+  responseType: 'text'
 };
 
 @Injectable({
@@ -18,8 +18,8 @@ const httpOptions={
 })
 export class ServiceService {
 
-  private serviceUrl = 'http://192.168.1.172:8080';
-  private Url = 'http://192.168.1.172:8080/Project1/res/addCSV';
+  private serviceUrl = 'http://192.168.1.247:8080';
+  private Url = 'http://192.168.1.247:8080/Project1/res/addCSV';
   
 
   constructor(private httpClient: HttpClient) {
