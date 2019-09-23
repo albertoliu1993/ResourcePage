@@ -16,7 +16,7 @@
 </p-toolbar>
 
 
-<p-table [columns]="cols" [value]="filteredResourceList" [scrollable]="true" scrollHeight="200px" selectionMode="single" [(selection)]="selectedResource">
+<p-table [columns]="cols" [value]="filteredResourceList" [scrollable]="true" scrollHeight="1000px" selectionMode="single" [(selection)]="selectedResource">
     <ng-template pTemplate="header" let-columns>
         <tr>
             <th *ngFor="let col of columns">{{col.header}}</th>

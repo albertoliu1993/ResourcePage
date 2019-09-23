@@ -10,7 +10,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 const httpOptions={
   headers: new HttpHeaders({'content-Type' : 'application/json'}),
-  responseType: 'text'
+  responseType: 'json'
 };
 
 @Injectable({
