@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { AuthenticationService } from '../_services';
-import { AuthResponseData } from './auth.service';
+//import { AuthResponseData } from './auth.service';
 
 // import { AuthService, AuthResponseData } from './auth.service';
 

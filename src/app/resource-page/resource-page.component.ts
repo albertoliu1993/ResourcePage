@@ -4,6 +4,7 @@ import { ResourceList } from '../resource-page/ResourceList';
 import { ServiceService } from '../resource-page/service.service';
 import { HttpResponse, HttpEventType, HttpClient } from '@angular/common/http';
 import { Papa } from 'ngx-papaparse';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-resource-page',
@@ -55,6 +56,7 @@ export class ResourcePageComponent implements OnInit {
   newResource: boolean;
   //filteredResourceList: ResourceList[];
   cols: any[];
+
 
   addRow(){
     this.showDialogToAdd();
@@ -122,11 +124,12 @@ export class ResourcePageComponent implements OnInit {
     console.log(this.transFormData);
     this.service.importCSVFile(this.transFormData).subscribe(res =>{
       console.log(res);
-    })
+    });
+    this.router.navigate(['/resourcepage']);
   };
 
 
-  constructor(private service: ServiceService, private papa: Papa, private httpClient : HttpClient){
+  constructor(private service: ServiceService, private papa: Papa, private httpClient : HttpClient, private router: Router){
     
   }
 
