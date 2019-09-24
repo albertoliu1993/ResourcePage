@@ -18,6 +18,7 @@ import {DialogModule} from 'primeng/dialog';
 import {FileUploadModule} from 'primeng/fileupload';
 import { ServiceService } from '../app/resource-page/service.service';
 import {ProgressBarModule} from 'primeng/progressbar';
+
 //
 import {ReactiveFormsModule} from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';

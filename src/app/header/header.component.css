@@ -25,3 +25,9 @@
     width: 11%;
     background-color: black;
 }
+
+:host ::ng-deep .ui-pm {
+    border: 0px;
+    background-color: black;
+    width: 80%;
+}
