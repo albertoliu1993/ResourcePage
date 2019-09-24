@@ -12,15 +12,6 @@
 </p-toolbar>
 
 <p-sidebar [(visible)]="display " styleClass="ui-sidebar-sm">
-    <h1 style="font-size:1em; color: white">Resource</h1>
-    <h1 style="font-size:1em; color: white">Project</h1>
-    <h1 style="font-size:1em; color: white">Formula</h1>
-    <h1 style="font-size:1em; color: white">Change Request</h1>
-    <h1 style="font-size:1em; color: white">Budget</h1>
-    <h1 style="font-size:1em; color: white">Prime Supplier</h1>
-    <h1 style="font-size:1em; color: white">Change Control</h1>
-    <h1 style="font-size:1em; color: white">Contract</h1>
-    <h1 style="font-size:1em; color: white">Approved Change</h1>
-    <h1 style="font-size:1em; color: white">Summary</h1>
+    <p-menu styleClass="ui-pm" [model]="items2"></p-menu>
 </p-sidebar>
 <button pButton type="button" class="ui-button-raised ui-button-rounded" (click)="display=true " icon="pi pi-arrow-right "></button>

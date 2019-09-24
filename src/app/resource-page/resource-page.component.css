@@ -23,3 +23,12 @@
     top: 0.5em;
     right: 0.5em;
 }
+
+:host ::ng-deep .ui-b-1 {
+    background-color: rgb(255, 81, 0);
+}
+
+:host ::ng-deep .ui-b-2 {
+    background-color: rgb(255, 81, 0);
+    width: 30%;
+}

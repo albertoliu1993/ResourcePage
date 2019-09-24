@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {MenuItem} from 'primeng/api';  
+import {MenuItem} from 'primeng/api'; 
+import {MenuModule} from 'primeng/menu';
+
 
 @Component({
   selector: 'app-header',
@@ -11,6 +13,8 @@ export class HeaderComponent implements OnInit {
   display;
 
   items: MenuItem[];
+
+  items2: MenuItem[];
   
   constructor() { }
 
@@ -19,6 +23,18 @@ export class HeaderComponent implements OnInit {
       {label: 'Angular.io', icon: 'fa fa-link', url: 'http://angular.io'},
       {label: 'Theming', icon: 'fa fa-paint-brush', routerLink: ['/theming']}
     ];
+
+    this.items2 = [
+      {label: 'Resource'},
+      {label: 'Project'},
+      {label: 'Change Request'},
+      {label: 'Budget'},
+      {label: 'Prime Supplier'},
+      {label: 'Change Control'},
+      {label: 'Contract'},
+      {label: 'Approved Change'},
+      {label: 'Summary'}
+    ]
   }
 
 }

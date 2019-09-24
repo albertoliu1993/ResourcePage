@@ -10,7 +10,7 @@
     </div>
 
     <div class="ui-toolbar-group-right">
-        <p-tieredMenu #menu [model]="items" [popup]="true"></p-tieredMenu>
+        <p-tieredMenu #menu [model]="items" [popup]="true" appendTo="body"></p-tieredMenu>
         <button #btn type="button" pButton icon="pi pi-plus" (click)="menu.toggle($event)" class="ui-button-two"></button>
     </div>
 </p-toolbar>
@@ -50,13 +50,13 @@
     </div>
     <p-footer>
         <div class="ui-dialog-buttonpane ui-helper-clearfix">
-            <button type="button" pButton icon="fa fa-close" (click)="delete()" label="Delete"></button>
-            <button type="button" pButton icon="fa fa-check" (click)="save()" label="Save"></button>
+            <button class="ui-b-1" type="button" pButton icon="fa fa-close" (click)="delete()" label="Delete"></button>
+            <button class="ui-b-1" type="button" pButton icon="fa fa-check" (click)="save()" label="Save"></button>
         </div>
     </p-footer>
 </p-dialog>
 
 <p-dialog header="Resource Details" [(visible)]="displayDialog2" [responsive]="true" showEffect="fade" [modal]="true" [style]="{width: '300px'}">
     <input type="file" class="upload" (change)="changeListener($event.target.files)" accept=".csv" />
-    <button type="button" pButton icon="fa fa-check" (click)="submit()" label="Submit"></button>
+    <button class="ui-b-2" type="button" pButton icon="fa fa-check" (click)="submit(); router.navigate(['/resourcepage'])" label="Submit"></button>
 </p-dialog>
