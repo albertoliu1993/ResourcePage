@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
     ];
 
     this.items2 = [
-      {label: 'Resource'},
+      {label: 'Resource', url: 'http://localhost:4200/resourcepage'},
       {label: 'Project'},
       {label: 'Change Request'},
       {label: 'Budget'},
